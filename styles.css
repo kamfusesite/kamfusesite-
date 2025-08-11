@@ -1,0 +1,122 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0a, #050505);
+  color: #ffffff;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.8s ease;
+}
+
+#intro-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#intro-text {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #00fff7;
+  animation: pulse 2.5s infinite;
+  text-shadow: 0 0 15px rgba(0, 255, 247, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.98); }
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 650px;
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.nickname {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.desc {
+  font-size: 1.2rem;
+  color: rgba(87, 87, 87, 0.9);
+  margin-bottom: 25px;
+}
+
+.music-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.disc-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #00fff7;
+  animation: spin 5s linear infinite;
+}
+
+.rotating-disc {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.track-info {
+  font-size: 1.1rem;
+  color: #00fff7;
+}
+
+.controls {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-player {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #00fff7;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.btn-player:hover {
+  transform: scale(1.2);
+}
